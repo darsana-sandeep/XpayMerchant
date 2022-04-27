@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <h1>Welcome to Xpayback</h1>
+
+    <a href="/">Home</a>
+    <span>/</span>
+
+    {% if current_user %}
+        <a href="logout">Logout</a>
+        <hr>
+        <h2>Welcome <span style="color: dodgerblue;">{{current_user}}</span>!</h2>
+    {% else %}
+        <a href="login">Login</a>
+        <span>/</span>
+        <!-- <hr> -->
+        <!-- <h2>Login to access this website!</h2> -->
+    {% endif %}
+
+
+    {% block body %}{% endblock %}
+</body>
+</html>
